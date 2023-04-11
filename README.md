@@ -7,7 +7,7 @@ In the first part, we will implement the [K-Means](https://en.wikipedia.org/wiki
 The implementation will be based on the [NumPy](https://numpy.org/) package only.
 
 In the second part, we will implement the [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) algorithm (Pricipal Component Analysis) on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database).  
-As in the first part, the implementation will be based on the numpy package only.
+As in the first part, the implementation will be based on the NumPy package only.
 
 ### K-Means
 K-means clustering is a known [unsupervised](https://en.wikipedia.org/wiki/Unsupervised_learning) machine learning algorithm that is used to solve the clustering problems. Meaning, its purpose is to group a set of data points into clusters based on similarity. The number of groups is represented by K.  
@@ -19,6 +19,8 @@ Once all data points have been assigned to a cluster, we recalculate the centroi
 We repeat this process until the centroids no longer move significantly or until we reach a predetermined number of iterations.  
 In the end, we would have k clusters of points based on similarity.  
 
+This problem is [NP-Hard](https://en.wikipedia.org/wiki/NP-hardness), but there is a mathematical proof that the algorithm converges and therefore a sufficiently good approximate result can be reached.  
+
 You can read more about K-Means [here](https://www.javatpoint.com/k-means-clustering-algorithm-in-machine-learning).  
 <p align="center">
   <img 
@@ -28,12 +30,18 @@ You can read more about K-Means [here](https://www.javatpoint.com/k-means-cluste
 </p>
 
 ### PCA - Principal component analysis
+Principal component analysis (PCA) is a popular technique for analyzing large datasets containing a high number of dimensions/features per observation (i.e there is a lot of data to take into account).  
+It is likely that some of the data are less important and will not be too significant in the calculation process, so the idea behind PCA is to remove these parts and take into account only the significant features that interest us. This way our data can be interpreted more easily and quickly.  
 
-You can read more about PCA (Principal component analysis) [here]().  
+In short, we can achieve this by projecting the samples into a lower dimensional space and then projecting them back into the original dimension. If we project to a dimension that is too low, we can lose vital information. Therefore, the dimension to project to should be chosen wisely. If so, we will omit only the less important features and in addition we will get rid of noises.  
+In the second part of the notebook, you can see how the choice of the dimension affects the solution.
+
+
+You can read more about PCA (Principal component analysis) [here](https://builtin.com/data-science/step-step-explanation-principal-component-analysis).  
 <p align="center">
   <img 
     width="700"
-    src=""
+    src="https://miro.medium.com/v2/resize:fit:1400/1*37a_i1t1tDxDYT3ZI6Yn8w.gif"
   >
 </p>
 
